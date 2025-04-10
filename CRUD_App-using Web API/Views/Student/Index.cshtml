@@ -4,21 +4,61 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Students</h1>
 
 <p>
-    <a asp-action="Create" class="btn btn-primary">Create New</a>
+    <a asp-action="Create" class="btn btn-primary">New Student +</a>
 </p>
 
 @{
     if (TempData["creation_success_msg"] != null)
     {
         <div class="alert alert-success alert-dismissible fade show" role="alert">
-            <strong>Sucess!</strong>@TempData["creation_success_msg"]
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+            <strong>Success!&nbsp;</strong>@TempData["creation_success_msg"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" onclick="clearTempData()"></button>
+        </div>
+
+        @section Scripts {
+            <script>
+                function clearTempData() {
+                    TempData["creation_success_msg"] = null;
+                }
+            </script>
+    }
+    }
+    if (TempData["Sucessfully_updated_msg"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Sucess!&nbsp;</strong>@TempData["Sucessfully_updated_msg"]
+            <button type="button" class="btn-close" onclick="clearTempDataTwo()" data-bs-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true"></span>
             </button>
         </div>
+
+        @section Scripts {
+            <script>
+                function clearTempDataTwo() {
+                    TempData["Sucessfully_updated_msg"] = null;
+                }
+            </script>
+    }
+    }
+
+    if (TempData["Delete_success_msg"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>Sucess!&nbsp;</strong>@TempData["Delete_success_msg"]
+            <button type="button" class="btn-close" onclick="clearTempDataThree()" data-bs-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true"></span>
+            </button>
+        </div>
+        @section Scripts {
+            <script>
+                function clearTempDataThree() {
+                    TempData["Delete_success_msg"] = null;
+                }
+            </script>
+    }
     }
 }
 
@@ -41,26 +81,27 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FullName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Class)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Section)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.Id })
-                @Html.ActionLink("Details", "Details", new { id=item.Id })
-                @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Class)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Section)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "UpdateStudent", new { id = item.Id }, new { @class = "btn btn-primary" })
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-info" })
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
