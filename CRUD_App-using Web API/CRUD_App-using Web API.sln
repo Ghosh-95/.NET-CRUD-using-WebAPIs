@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35919.96 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRUD_App-using Web API", "CRUD_App-using Web API.csproj", "{CAA9C6AF-B149-468E-9944-A7B6BD82F529}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CAA9C6AF-B149-468E-9944-A7B6BD82F529}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAA9C6AF-B149-468E-9944-A7B6BD82F529}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAA9C6AF-B149-468E-9944-A7B6BD82F529}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAA9C6AF-B149-468E-9944-A7B6BD82F529}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {64B7B963-2906-4238-875C-BB1CF06AB96E}
+	EndGlobalSection
+EndGlobal
